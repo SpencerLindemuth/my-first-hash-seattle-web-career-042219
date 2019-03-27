@@ -1,7 +1,6 @@
-require 'net/http'
+require 'httparty'
 require 'json'
 
 url = 'https://data.cityofnewyork.us/resource/7btz-mnc8.json'
-uri = URI(url)
-response = Net::HTTP.get(uri)
-JSON.parse(response)
+response = HTTParty.get(url)
+puts response.parse_response
