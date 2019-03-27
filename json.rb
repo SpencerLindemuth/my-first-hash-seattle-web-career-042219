@@ -6,4 +6,5 @@ response = HTTParty.get(url)
 list = response.parsed_response
 list.each do |x|
   puts x["provider_first_name"]
+  puts x["provider_last_name"]
 end
