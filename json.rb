@@ -3,4 +3,7 @@ require 'json'
 
 url = 'https://data.cityofnewyork.us/resource/7btz-mnc8.json'
 response = HTTParty.get(url)
-puts response.parsed_response
+list = response.parsed_response
+list.each do |x|
+  puts x["organization_type"]
+end
